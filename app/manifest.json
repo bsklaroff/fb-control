@@ -3,8 +3,14 @@
   "manifest_version": 2,
   "version": "0.1",
   "description": "blocks the facebook newsfeed",
+  "permissions": [
+    "tabs"
+  ],
+  "background": {
+    "scripts": ["jquery-1.9.1.min.js", "background.js"]
+  },
   "content_scripts": [{
-    "js": ["fb_control.js"],
+    "js": ["jquery-1.9.1.min.js", "fb_control.js"],
     "matches": ["http://www.facebook.com/*", "https://www.facebook.com/*"]
   }]
 }
