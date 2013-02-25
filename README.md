@@ -1,1 +1,1 @@
-this app blocks your facebook newsfeed from showing up
+this is a chrome extension that blocks the facebook newsfeed

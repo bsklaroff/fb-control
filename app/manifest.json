@@ -1,10 +1,11 @@
 {
   "name": "fb control",
   "manifest_version": 2,
-  "version": "0.1",
+  "version": "0.2",
   "description": "blocks the facebook newsfeed",
   "permissions": [
-    "tabs"
+    "tabs",
+    "storage"
   ],
   "background": {
     "scripts": ["jquery-1.9.1.min.js", "background.js"]
