@@ -19,20 +19,36 @@ var getTimeStr = function(millis) {
   var minutes = Math.floor(seconds / 60);
   var hours = Math.floor(minutes / 60);
   var days = Math.floor(hours / 24);
-  hours -= 24 * days;
-  minutes -= 60 * hours;
   seconds -= 60 * minutes;
+  minutes -= 60 * hours;
+  hours -= 24 * days;
   res = ''
   if (days !== 0) {
-    res += days + ' days, ';
+    if (days === 1) {
+      res += days + ' day, ';
+    } else {
+      res += days + ' days, ';
+    }
   }
   if (days + hours !== 0) {
-    res += hours + ' hours, ';
+    if (hours === 1) {
+      res += hours + ' hour, ';
+    } else {
+      res += hours + ' hours, ';
+    }
   }
   if (days + hours + minutes !== 0) {
-    res += minutes + ' minutes, ';
+    if (minutes === 1) {
+      res += minutes + ' minute, ';
+    } else {
+      res += minutes + ' minutes, ';
+    }
   }
-  res += seconds + ' seconds';
+  if (seconds === 1) {
+    res += seconds + ' second';
+  } else {
+    res += seconds + ' seconds';
+  }
   return res;
 };
 
