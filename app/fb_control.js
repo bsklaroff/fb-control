@@ -53,15 +53,14 @@ var getTimeStr = function(millis) {
 };
 
 var replace = function() {
-  try {
-    if (totalFacebookTime === 0) {
-      document.getElementById('pagelet_home_stream').innerHTML = '';
-    } else {
-      document.getElementById('pagelet_home_stream').innerHTML =
-        'You have spent ' + getTimeStr(totalFacebookTime) + ' on facebook';
-    }
-  } catch (err) {
-    // do nothing if element not found
+  var htmlStr = '';
+  if (totalFacebookTime !== 0) {
+    htmlStr = 'You have spent ' + getTimeStr(totalFacebookTime) + ' on facebook';
+  }
+  if ($('#pagelet_home_stream').length > 0) {
+    $('#pagelet_home_stream').html(htmlStr);
+  } else if ($('#pagelet_feed_header').length > 0) {
+    $('#pagelet_feed_header').parent().html(htmlStr);
   }
   setTimeout(replace, 1000);
 }
